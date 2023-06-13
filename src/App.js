@@ -88,12 +88,163 @@
 // export default App;
 
 // day 3 react 
-import React from 'react'
+// import React from 'react'; //not necessary from react 17
 
-function App() {
-  return (
-    <div>App</div>
+// function App(props) {
+//   const {notes} =props;
+//   // console.log(notes);
+//   return (
+//     <div>
+//       <h1>Notes</h1>
+//       <ul>
+//         <li>{notes[0].content}</li>
+//         <li>{notes[1].content}</li>
+//         <li>{notes[2].content}</li>
+//         <li>{notes[3].content}</li>
+//         <li>{notes[4].content}</li>
+//       </ul>
+//     </div>
+//   )
+// }
+
+// export default App;
+//below we are converting the li items into an array using map and then returning it as li item.
+// here we have converted the normal list items into a dynamic list
+// import React from 'react'; //not necessary from react 17
+
+// function App(props) {
+//   const {notes} =props;
+//   return (
+//     <div>
+//       <h1>Notes</h1>
+//       <ul>
+//         {notes.map(note=> 
+//         <li key={note.id}> {note.content}</li>)}
+//       </ul>
+//     </div>
+//   )
+// }
+
+// export default App;
+
+// import React from 'react'; //not necessary from react 17
+// function Note({note}) {
+//   return(
+//     <li>{note.content}</li>
+//   )
+// }
+
+
+// function App({notes}) {
+  
+//   return (
+//     <div>
+//       <h1>Notes</h1>
+//       <ul>
+//         {notes.map(note=> 
+//         <Note key={note.id} note={note}/>
+//         )}
+//       </ul>
+//     </div>
+//   )
+// }
+
+// export default App;
+
+//in the below code we added star symbol with help of important key
+//there are other ways as well using importnat key- refer it in github.
+
+// import React from 'react'; //not necessary from react 17
+// function Note({note}) {
+//   return(
+//     <li>{note.content} {note.important && '*'}</li>
+    
+//   )
+// }
+
+
+// function App({notes}) {
+  
+//   return (
+//     <div>
+//       <h1>Notes</h1>
+//       <ul>
+//         {notes.map(note=> 
+//         <Note key={note.id} note={note}/>
+//         )}
+//       </ul>
+//     </div>
+//   )
+// }
+
+// export default App;
+
+//on pressing onsubmit the event is added
+// import React from 'react'; //not necessary from react 17
+// function Note({note}) {
+//   return(
+//     <li>{note.content} {note.important && '*'}</li>
+    
+//   )
+// }
+
+
+// function App({notes}) {
+//   const addNote= (event)=>{
+//     event.preventDefault();
+//     console.log('button clicked', event.target);
+//   }
+  
+//   return (
+//     <div>
+//       <h1>Notes</h1>
+//       <ul>
+//         {notes.map(note=> 
+//         <Note key={note.id} note={note}/>
+//         )}
+//       </ul>
+//       <form onSubmit={addNote}>
+//         <input/>
+//         <button type='submit'>Save Note</button>
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default App;
+
+//here passing the onclick in button itself
+
+import React from 'react'; //not necessary from react 17
+function Note({note}) {
+  return(
+    <li>{note.content} {note.important && '*'}</li>
+    
   )
 }
 
-export default App
+
+function App({notes}) {
+  const addNote= (event)=>{
+    event.preventDefault();
+    console.log('button clicked', event.target);
+  }
+  
+  return (
+    <div>
+      <h1>Notes</h1>
+      <ul>
+        {notes.map(note=> 
+        <Note key={note.id} note={note}/>
+        )}
+      </ul>
+      <form>
+        <input/>
+        <button onClick={addNote}>Save Note</button>
+      </form>
+    </div>
+  )
+}
+
+export default App;
+
