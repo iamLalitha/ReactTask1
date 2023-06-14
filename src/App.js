@@ -360,17 +360,145 @@
 // export default App;
 
 //REUSABLE COMPONENTS
-import React, {Component} from 'react';
-//exporting the Hello from the components
-import Hello from './components/Hello';
-export class App extends Component{
-    render(){
-    return (
-      <div>
-        <Hello/>
-      </div>
-    )
-    }
-}
-export default App;
+// import React, {Component} from 'react';
+// //exporting the Hello from the components
+// import Hello from './components/Hello';
+// export class App extends Component{
+//     render(){
+//     return (
+//       <div>
+//         <Hello/>
+//       </div>
+//     )
+//     }
+// }
+// export default App;
 
+//DAY 5 -HOOKS (USESTATE AND USEEFFECT)
+//useState hook
+//functional -stateful component
+//state changes triggers component re-rendering
+//EXAMPLE 1
+// import React, {useState} from 'react';
+
+// function App() {
+//   const [counter, setCounter]=useState(0);
+//   setTimeout(
+//     ()=> setCounter(counter+1), 1000
+//   );
+//   console.log('rendering...', counter);
+//   return (
+//     <div>{counter}</div>
+//   )
+// }
+
+// export default App
+
+//EXAMPLE 2 
+// import React, {useState} from 'react';
+
+// function App() {
+//   const[counter, setCounter] =useState(0);
+//   const handlePlusClick=() =>{
+//     setCounter(counter+1);
+//   }
+//   const handleMinusClick=() =>{
+//     setCounter(counter-1);
+//   }
+//   const handleZeroClick=() =>{
+//     setCounter(0);
+//   }
+  
+
+//   return (
+//     <div>
+//        <div>{counter}</div>
+//        <button onClick={handlePlusClick}>plus</button>
+//        <button onClick={handleMinusClick}>minus</button>
+//        <button onClick={handleZeroClick}>zero</button>
+//     </div>
+   
+//   )
+// }
+
+// export default App;
+
+//EXAMPLE 3
+// import React,{useEffect, useState} from 'react'
+
+
+// function App() {
+//   const [data, setData]=useState(null);
+//   //runs only one time 
+//   useEffect(() =>{
+//     fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then((response)=> response.json)
+//     .then((data)=>setData(data));
+//   },[]);
+
+//   return (
+//     <div>
+//       <h1>API DATA</h1>
+//       {/* {UNORDERED LISTS WITH LIST ITEMS  FROM API POSTS TITLE} */}
+//     {
+//       data?(
+//         <ul>
+//           {
+//             data.map(Item => <li key={Item.id}>{Item.title}</li>)
+//           }
+//         </ul>
+//       ) : (
+//         <p>Loading data...</p>
+//       )
+//     }
+//     </div>
+//   )
+// }
+
+// export default App;
+
+//EXAMPLE 4
+// 
+
+//EXAMPLE 5 -PROPS DRILLING 
+// props drilling is nothing but passings the
+// props data to nested child component from the parent component.
+
+// import React from 'react'
+// //grandchild component
+
+// function GrandChildComponent({parentData}){
+//   console.log(parentData);
+//   return(
+//     <div>
+//       <h3>Grand child component</h3>
+//     </div>
+//   )
+// }
+
+// //child component
+
+// function ChildComponent({parentData}){
+//  return(
+//     <div>
+//     <h2>Child Component</h2>
+//     <GrandChildComponent parentData={parentData}/>
+//     </div>
+//   )
+// }
+
+// function App() {
+//   const parentData='hello from parent';
+//   return (
+//     <div>
+//       <h1>Parent component</h1>
+//       <ChildComponent parentData={parentData}/>
+     
+//     </div>
+//   )
+// }
+
+// export default App
+
+//EXAMPLE 5 - Passing data from child component to parent component 
+//refer the code in github 
