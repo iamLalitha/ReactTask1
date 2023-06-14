@@ -215,36 +215,162 @@
 
 //here passing the onclick in button itself
 
-import React from 'react'; //not necessary from react 17
-function Note({note}) {
-  return(
-    <li>{note.content} {note.important && '*'}</li>
+// import React from 'react'; //not necessary from react 17
+// function Note({note}) {
+//   return(
+//     <li>{note.content} {note.important && '*'}</li>
     
-  )
-}
+//   )
+// }
 
 
-function App({notes}) {
-  const addNote= (event)=>{
-    event.preventDefault();
-    console.log('button clicked', event.target);
-  }
+// function App({notes}) {
+//   const addNote= (event)=>{
+//     event.preventDefault();
+//     console.log('button clicked', event.target);
+//   }
   
-  return (
-    <div>
-      <h1>Notes</h1>
-      <ul>
-        {notes.map(note=> 
-        <Note key={note.id} note={note}/>
-        )}
-      </ul>
-      <form>
-        <input/>
-        <button onClick={addNote}>Save Note</button>
-      </form>
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       <h1>Notes</h1>
+//       <ul>
+//         {notes.map(note=> 
+//         <Note key={note.id} note={note}/>
+//         )}
+//       </ul>
+//       <form>
+//         <input/>
+//         <button onClick={addNote}>Save Note</button>
+//       </form>
+//     </div>
+//   )
+// }
 
+// export default App;
+
+//DAY 4 -REACT COMPONENTS
+//CREATING CLASS COMPONENT:
+
+// import {Component} from 'react'
+
+//class component
+//extends is nothing but it inherits the properties from the component class.
+//here App is a child class which inherits the properties from Parent class Component.
+//but functional components are better than class components.
+// class App extends Component {
+//   render(){
+//     return <div>Hello World!</div>
+//   }
+// }
+
+// export default App
+
+// HOW TO PASS PROPS IN CLASS COMPONENT ?
+
+// import {Component} from 'react';
+
+// class Hello extends Component{
+//   render(){
+//     // console.log(this.props);
+//     const {name} =this.props;
+//     return(
+//       <div>Hello, {name}!</div>
+//     )
+//   }
+// }
+
+// class App extends Component {
+//   render(){
+//     return <div>
+//       <Hello name={'lalitha'}/>
+//       </div>
+//   }
+// }
+
+// export default App
+
+//COMPONENT LIFE CYCLE 
+
+// import React, {Component} from 'react';
+// export class App extends Component{
+
+//   //componentDidMount: called after the component ha been rendered to the DOM.
+//   componentDidMount(){
+//     console.log('component mounted');
+//   }
+
+//   componentDidUpdate(){
+//     //it is invoked after the component has been updated in the DOM.
+//     // state or props changes
+//   }
+
+//   componentWillUnmount(){
+//     //it is invoked just before the component is removed from the DOM.
+//     //releasing memory or resources
+//     //detaching the events
+//   }
+//   render(){
+//     return <div>
+//       Hello World!
+//       </div>
+//   }
+
+// }
+// export default App
+
+//STATEFUL COMPONENTS
+// import React, {Component} from 'react';
+// export class App extends Component{
+  
+//   constructor(props){
+//     super(props);
+//     this.state={
+//       count:0,
+//     }
+//   }
+
+//   handlePlusClick = () => {
+//     this.setState((prevState) =>({
+//       count: prevState.count+1,
+//     }));
+//   }
+
+//   handleminusClick = () => {
+//     this.setState((prevState) =>({
+//       count: prevState.count-1,
+//     }));
+//   }
+
+//   handleZeroClick=()=>{
+//     this.setState((prevState) =>({
+//       count:0,
+//     }));
+//   }
+  
+//   render(){
+//     return <div>
+//       <p>Count: {this.state.count}</p>
+//       <button onClick={this.handlePlusClick}>plus</button>
+//       <button onClick={this.handleminusClick}>minus</button>
+//       <button onClick={this.handleZeroClick}>zero</button>
+//       </div>
+//   }
+
+// }
+// export default App;
+
+//REUSABLE COMPONENTS
+import React, {Component} from 'react';
+//exporting the Hello from the components
+import Hello from './components/Hello';
+export class App extends Component{
+    render(){
+    return (
+      <div>
+        <Hello/>
+      </div>
+    )
+    }
+}
 export default App;
 
