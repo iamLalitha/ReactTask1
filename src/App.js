@@ -1,6 +1,6 @@
 //without React Router
 import React, { useState } from 'react'
-import {Link, Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import {Link, Route, BrowserRouter as Router, Routes, useParams} from 'react-router-dom';
 
 function Home(){
     return(
@@ -9,11 +9,29 @@ function Home(){
         </div>
     );
 }
-
-function Notes(){
+function Note({notes}){
+    const id= useParams().id;
+    const note=notes.find(n=> n.id === Number(id));
     return(
         <div>
-            <h2>Notes App</h2>
+            <h2>{note.content}</h2>
+        </div>
+    )
+ }
+        
+//search this id in notes
+
+
+function Notes({notes}){
+    return(
+        <div>
+            <h2>Notes</h2>
+            <ul>
+                {
+                    Notes.map(note=>
+                       <li key={note.id}><Link to={`/notes/${note.id}`}>{note.content}</Link></li> )
+                }
+            </ul>
         </div>
     );
 }
