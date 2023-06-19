@@ -31,7 +31,7 @@ function Sidebar(){
 
         {/* <!-- Nav Item - Pages Collapse Menu --> */}
         <li className="nav-item">
-            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            <a className="nav-link collapsed" href="/components" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo">
                 <i className="fas fa-fw fa-cog"></i>
                 <span>Components</span>
@@ -47,7 +47,7 @@ function Sidebar(){
 
         {/* <!-- Nav Item - Utilities Collapse Menu --> */}
         <li className="nav-item">
-            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            <a className="nav-link collapsed" href="/utilities" data-toggle="collapse" data-target="#collapseUtilities"
                 aria-expanded="true" aria-controls="collapseUtilities">
                 <i className="fas fa-fw fa-wrench"></i>
                 <span>Utilities</span>
@@ -74,7 +74,7 @@ function Sidebar(){
 
         {/* <!-- Nav Item - Pages Collapse Menu --> */}
         <li className="nav-item">
-            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+            <a className="nav-link collapsed" href="/page" data-toggle="collapse" data-target="#collapsePages"
                 aria-expanded="true" aria-controls="collapsePages">
                 <i className="fas fa-fw fa-folder"></i>
                 <span>Pages</span>
@@ -117,7 +117,7 @@ function Sidebar(){
 
         {/* <!-- Sidebar Message --> */}
         <div className="sidebar-card d-none d-lg-flex">
-            <img className="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="..."/>
+            <img className="sidebar-card-illustration mb-2" src="https://raw.githubusercontent.com/StartBootstrap/startbootstrap-sb-admin-2/f0309881ef82794a1bd6257cd321801bc38a0f3d/img/undraw_rocket.svg" alt="..."/>
             <p className="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
             <a className="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
         </div>
@@ -154,7 +154,7 @@ function Contentwrapper(){
 
             {/* <!-- Nav Item - Search Dropdown (Visible Only XS) --> */}
             <li className="nav-item dropdown no-arrow d-sm-none">
-                <a className="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                <a className="nav-link dropdown-toggle" href="/dropdown" id="searchDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i className="fas fa-search fa-fw"></i>
                 </a>
@@ -178,7 +178,7 @@ function Contentwrapper(){
 
             {/* <!-- Nav Item - Alerts --> */}
             <li className="nav-item dropdown no-arrow mx-1">
-                <a className="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                <a className="nav-link dropdown-toggle" href="/alerts" id="alertsDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i className="fas fa-bell fa-fw"></i>
                     {/* <!-- Counter - Alerts --> */}
@@ -190,7 +190,7 @@ function Contentwrapper(){
                     <h6 className="dropdown-header">
                         Alerts Center
                     </h6>
-                    <a className="dropdown-item d-flex align-items-center" href="#">
+                    <a className="dropdown-item d-flex align-items-center" href="/">
                         <div className="mr-3">
                             <div className="icon-circle bg-primary">
                                 <i className="fas fa-file-alt text-white"></i>
@@ -201,7 +201,7 @@ function Contentwrapper(){
                             <span className="font-weight-bold">A new monthly report is ready to download!</span>
                         </div>
                     </a>
-                    <a className="dropdown-item d-flex align-items-center" href="#">
+                    <a className="dropdown-item d-flex align-items-center" href="/dropdown">
                         <div className="mr-3">
                             <div className="icon-circle bg-success">
                                 <i className="fas fa-donate text-white"></i>
@@ -212,7 +212,7 @@ function Contentwrapper(){
                             $290.29 has been deposited into your account!
                         </div>
                     </a>
-                    <a className="dropdown-item d-flex align-items-center" href="#">
+                    <a className="dropdown-item d-flex align-items-center" href="/dropdown">
                         <div className="mr-3">
                             <div className="icon-circle bg-warning">
                                 <i className="fas fa-exclamation-triangle text-white"></i>
@@ -223,13 +223,13 @@ function Contentwrapper(){
                             Spending Alert: We've noticed unusually high spending for your account.
                         </div>
                     </a>
-                    <a className="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                    <a className="dropdown-item text-center small text-gray-500" href="/alerts">Show All Alerts</a>
                 </div>
             </li>
 
             {/* <!-- Nav Item - Messages --> */}
             <li className="nav-item dropdown no-arrow mx-1">
-                <a className="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                <a className="nav-link dropdown-toggle" href="/message" id="messagesDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i className="fas fa-envelope fa-fw"></i>
                     {/* <!-- Counter - Messages --> */}
@@ -241,9 +241,9 @@ function Contentwrapper(){
                     <h6 className="dropdown-header">
                         Message Center
                     </h6>
-                    <a className="dropdown-item d-flex align-items-center" href="#">
+                    <a className="dropdown-item d-flex align-items-center" href="/dropdown">
                         <div className="dropdown-list-image mr-3">
-                            <img className="rounded-circle" src="img/undraw_profile_1.svg"
+                            <img className="rounded-circle" src="https://raw.githubusercontent.com/StartBootstrap/startbootstrap-sb-admin-2/f0309881ef82794a1bd6257cd321801bc38a0f3d/img/undraw_profile_1.svg"
                                 alt="..."/>
                             <div className="status-indicator bg-success"></div>
                         </div>
@@ -253,9 +253,9 @@ function Contentwrapper(){
                             <div className="small text-gray-500">Emily Fowler · 58m</div>
                         </div>
                     </a>
-                    <a className="dropdown-item d-flex align-items-center" href="#">
+                    <a className="dropdown-item d-flex align-items-center" href="/dropdown">
                         <div className="dropdown-list-image mr-3">
-                            <img className="rounded-circle" src="img/undraw_profile_2.svg"
+                            <img className="rounded-circle" src="https://raw.githubusercontent.com/StartBootstrap/startbootstrap-sb-admin-2/f0309881ef82794a1bd6257cd321801bc38a0f3d/img/undraw_profile_2.svg"
                                 alt="..."/>
                             <div className="status-indicator"></div>
                         </div>
@@ -265,9 +265,9 @@ function Contentwrapper(){
                             <div className="small text-gray-500">Jae Chun · 1d</div>
                         </div>
                     </a>
-                    <a className="dropdown-item d-flex align-items-center" href="#">
+                    <a className="dropdown-item d-flex align-items-center" href="/dropdown">
                         <div className="dropdown-list-image mr-3">
-                            <img className="rounded-circle" src="img/undraw_profile_3.svg"
+                            <img className="rounded-circle" src="https://raw.githubusercontent.com/StartBootstrap/startbootstrap-sb-admin-2/f0309881ef82794a1bd6257cd321801bc38a0f3d/img/undraw_profile_3.svg"
                                 alt="..."/>
                             <div className="status-indicator bg-warning"></div>
                         </div>
@@ -277,7 +277,7 @@ function Contentwrapper(){
                             <div className="small text-gray-500">Morgan Alvarez · 2d</div>
                         </div>
                     </a>
-                    <a className="dropdown-item d-flex align-items-center" href="#">
+                    <a className="dropdown-item d-flex align-items-center" href="/dropdown">
                         <div className="dropdown-list-image mr-3">
                             <img className="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
                                 alt="..."/>
@@ -289,7 +289,7 @@ function Contentwrapper(){
                             <div className="small text-gray-500">Chicken the Dog · 2w</div>
                         </div>
                     </a>
-                    <a className="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                    <a className="dropdown-item text-center small text-gray-500" href="/message">Read More Messages</a>
                 </div>
             </li>
 
@@ -297,29 +297,29 @@ function Contentwrapper(){
 
             {/* <!-- Nav Item - User Information --> */}
             <li className="nav-item dropdown no-arrow">
-                <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                <a className="nav-link dropdown-toggle" href="/douglas-mcgee" id="userDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span className="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                     <img className="img-profile rounded-circle"
-                        src="img/undraw_profile.svg" alt=""/>
+                        src="https://raw.githubusercontent.com/StartBootstrap/startbootstrap-sb-admin-2/f0309881ef82794a1bd6257cd321801bc38a0f3d/img/undraw_profile.svg" alt=""/>
                 </a>
                 {/* <!-- Dropdown - User Information --> */}
                 <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                     aria-labelledby="userDropdown">
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="/profile">
                         <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                         Profile
                     </a>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="/settings">
                         <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                         Settings
                     </a>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="/activity-log">
                         <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                         Activity Log
                     </a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <a className="dropdown-item" href="/logoutmodel" data-toggle="modal" data-target="#logoutModal">
                         <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Logout
                     </a>
@@ -339,7 +339,7 @@ function Beginpagecontent(){
         {/* <!-- Page Heading --> */}
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            <a href="/report" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                     className="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
 
@@ -442,17 +442,17 @@ function Beginpagecontent(){
                         className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 className="m-0 font-weight-bold text-primary">Earnings Overview</h6>
                         <div className="dropdown no-arrow">
-                            <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            <a className="dropdown-toggle" href="/dropdown" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                             </a>
                             <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                 aria-labelledby="dropdownMenuLink">
                                 <div className="dropdown-header">Dropdown Header:</div>
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
+                                <a className="dropdown-item" href="/action">Action</a>
+                                <a className="dropdown-item" href="/another-action">Another action</a>
                                 <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="#">Something else here</a>
+                                <a className="dropdown-item" href="/something-else">Something else here</a>
                             </div>
                         </div>
                     </div>
@@ -473,17 +473,17 @@ function Beginpagecontent(){
                         className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 className="m-0 font-weight-bold text-primary">Revenue Sources</h6>
                         <div className="dropdown no-arrow">
-                            <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            <a className="dropdown-toggle" href="/dropdown" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                             </a>
                             <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                 aria-labelledby="dropdownMenuLink">
                                 <div className="dropdown-header">Dropdown Header:</div>
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
+                                <a className="dropdown-item" href="/action">Action</a>
+                                <a className="dropdown-item" href="/another-action">Another action</a>
                                 <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="#">Something else here</a>
+                                <a className="dropdown-item" href="/something-else">Something else here</a>
                             </div>
                         </div>
                     </div>
@@ -633,7 +633,7 @@ function Beginpagecontent(){
                     <div className="card-body">
                         <div className="text-center">
                             <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: '25rem'}}
-                                src="img/undraw_posting_photo.svg" alt="..."/>
+                                src="https://raw.githubusercontent.com/StartBootstrap/startbootstrap-sb-admin-2/f0309881ef82794a1bd6257cd321801bc38a0f3d/img/undraw_posting_photo.svg" alt="..."/>
                         </div>
                         <p>Add some quality, svg illustrations to your project courtesy of <a
                                 target="_blank" rel="noreferrer" href="https://undraw.co/">unDraw</a>, a
