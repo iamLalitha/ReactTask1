@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './sb-admin-2.css';
-import './sb-admin-2.min.css';
 import './sb-admin-2.js';
-import './sb-admin-2.min.js'
+
 
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));

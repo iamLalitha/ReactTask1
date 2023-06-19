@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 function Sidebar(){
     return(
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -684,9 +684,9 @@ function Scrolltotopbutton(){
     );
 }
 
-function Logoutmodel(){
+function LogoutModel(){
     return(
-        <div className="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div className="modal fade" id="logoutModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div className="modal-dialog" role="document">
             <div className="modal-content">
@@ -722,7 +722,7 @@ function App() {
           </div>
        </div>
        <Scrolltotopbutton/>
-       <Logoutmodel/>
+       <LogoutModel/>
     </div>
   )
 }
