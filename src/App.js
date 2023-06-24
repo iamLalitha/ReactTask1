@@ -1,7 +1,7 @@
 // //
 // import React, {useState, useRef} from 'react'
 
-import { useState } from "react";
+
 
 // function App() {
 //     const inputRef=useRef(null);
@@ -25,6 +25,8 @@ import { useState } from "react";
 //DAY 10
 //A simple note taking application
  // note component 
+ import React, {useState} from "react";
+
  function Note({note}){
   return(
     <li>{note.content}</li>
@@ -35,16 +37,28 @@ function App({props}) {
   //define a state
   const[notes, setNotes]=useState(props.notes);
  const[newNote, setNewNote]=useState("...new note");
+
   //define the addNote method
   let addNote=(event)=>{
     event.preventDefault();
-    // console.log('button clicked');
 
+    //create a new object and add the new object to the notes state
+    let noteObject={
+      id:notes.length +1,
+      content: newNote,
+      important: Math.random() < 0.5,
+    }
+
+    //add the new object to the notes state
+    setNotes(notes.concat(noteObject));
+
+    //clear the input text box
+    setNewNote('...new note');
   }
 
   //handlenotchange func
   let handleNoteChange=(event)=>{
-    setNewNote(event.traget.value);
+    setNewNote(event.target.value);
     // console.log('event.target.value');
   }
   return ( 
