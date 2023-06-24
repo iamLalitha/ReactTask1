@@ -13,7 +13,7 @@ import App from './App';
 //the below line removes the strict mode. it is same as like above code lines from 6-10. 
 //the below code jus removes the stirct mode.
 
-//day3
+//data
 const notes=[
     {
         id:1,
