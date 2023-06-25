@@ -28,7 +28,9 @@ import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import CreateNote from './components/createNote';
 import ReadNotes from './components/ReadNotes';
-import { Router } from 'react-router-dom';
+import Home from './components/Home';
+import EditNote from './components/EditNote';
+import {Link, Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 
 
 function App() {
@@ -38,7 +40,10 @@ function App() {
   const [newNoteContent, setNewNoteContent] = useState('');
   const [newNoteImportant, setNewNoteImportant] = useState('');
   const [showStatus, setShowStatus] = useState('all');
-
+ const padding ={
+  padding:15
+ };
+ 
   // get the data
   
   useEffect(() => {
@@ -66,7 +71,7 @@ function App() {
     //send the record to the json server 
     axios
     .post('http://localhost:3001/notes', noteObject)
-    .then(response=> console.log(response));
+    // .then(response=> console.log(response));
     // console.log(noteObject);
 
     // clear the input text box
@@ -89,19 +94,22 @@ function App() {
   }
   
   return (
-   <Router>
-     <div>
-     <ReadNotes showStatus={showStatus}
-     handleStatusChange={handleStatusChange}
-     notes={notes} 
-     />
-      <CreateNote addNote={addNote} newNoteContent=
-      {newNoteContent} handleNoteChange={handleNoteChange}
-      newNoteContentRef={newNoteContentRef}
-      handleSelectChange={handleSelectChange}
-      newNoteImportant={newNoteImportant}/>
+    <Router>
+
+    <div>
+      <Link style={padding} to="/">Home</Link>
+      <Link style={padding} to="/read">Read Notes</Link>
+      <Link style={padding} to="/create">Create Notes</Link>
+      <Link style={padding} to="/edit">Edit Notes</Link>
     </div>
-   </Router>
+
+    <Routes>
+      <Route path='/read' element={<ReadNotes showStatus={showStatus} handleStatusChange={handleStatusChange} notes={notes} />} />
+      <Route path='/create' element={<CreateNote addNote={addNote} newNoteContent={newNoteContent} handleNoteChange={handleNoteChange} newNoteContentRef={newNoteContentRef} handleSelectChange={handleSelectChange} newNoteImportant={newNoteImportant} />} />
+      <Route path='/' element={<Home />} />
+      <Route path='/edit' element={<EditNote />} />
+    </Routes>
+  </Router>
 
   )
 }

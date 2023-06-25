@@ -1,43 +1,47 @@
-import React from 'react'
+import React from 'react';
 import Note from './Note';
-function ReadNotes() {
+
+function ReadNotes({notes, showStatus, handleStatusChange}) {
 
     let filterNotes = (notes, status) => {
         switch (status) {
-          case 'all':
+        case 'all':
             return notes;
-          case 'imp':
+        case 'imp':
             return notes.filter(note => note.important === true);
-          case 'nonimp':
+        case 'nonimp':
             return notes.filter(note => note.important === false);
+         default:
+            return notes;   
         }
-      }
-    
-    const notesFiltered = filterNotes(notes, showStatus);
+    }
+
+  const notesFiltered = filterNotes(notes, showStatus);
+
   return (
     <div>
-         <h1> Read Notes</h1>
+        <h1>Read Notes</h1>
 
-<label>
-  <input type='radio' name='filter' value="all" checked={ showStatus === 'all' } onChange={handleStatusChange} />
-  Show All Notes
-</label>
-<br/>
-<label>
-  <input type='radio' name='filter' value="imp" checked={ showStatus === 'imp' } onChange={handleStatusChange} />
-  Show Important Notes
-</label>
-<br/>
-<label>
-  <input type='radio' name='filter' value="nonimp" checked={ showStatus === 'nonimp' } onChange={handleStatusChange} />
-  Show Non-Important Notes
-</label>
+        <label>
+            <input type='radio' name='filter' value="all" checked={ showStatus === 'all' } onChange={handleStatusChange} />
+            Show All Notes
+        </label>
 
-<ul>
-  {notesFiltered.map(note => 
-    <Note key={note.id} note={note} />
-  )}
-</ul>
+        <label>
+            <input type='radio' name='filter' value="imp" checked={ showStatus === 'imp' } onChange={handleStatusChange} />
+            Show Important Notes
+        </label>
+
+        <label>
+            <input type='radio' name='filter' value="nonimp" checked={ showStatus === 'nonimp' } onChange={handleStatusChange} />
+            Show Non-Important Notes
+        </label>
+
+        <ul>
+            {notesFiltered.map(note => 
+            <Note key={note.id} note={note} />
+            )}
+        </ul>      
     </div>
   )
 }
