@@ -23,79 +23,86 @@
 
 // export default App
 //DAY 10
-//A simple note taking application
- // note component 
- import React, {useRef, useState} from "react";
+// A Simple Note taking Application
+import axios from 'axios';
+import React, { useEffect, useRef, useState } from 'react';
+import CreateNote from './components/createNote';
+import ReadNotes from './components/ReadNotes';
+import { Router } from 'react-router-dom';
 
- function Note({note}){
-  return(
-    <li>{note.content}</li>
-  )
- }
 
-function App({props}) {
+function App() {
+  
+  // define a state
+  const [notes, setNotes] = useState([]);
+  const [newNoteContent, setNewNoteContent] = useState('');
+  const [newNoteImportant, setNewNoteImportant] = useState('');
+  const [showStatus, setShowStatus] = useState('all');
 
-  //define a state
-  const [notes, setNotes]=useState([]);
-  const [newNoteContent, setNewNoteContent]=useState(" ");
-  const [newNoteImportant,setNewNoteImportant]=useState(' ');
+  // get the data
+  
+  useEffect(() => {
+    // setNotes(props.notes);
+    //making axios call
+    axios
+    .get('http://localhost:3001/notes')
+    .then(response=> setNotes(response.data));
+  });
 
-  //get the data 
-  useEffect(()=>{
-    setNotes(props.notes);
-  },[]);
-
-  //create the reference for the first input text box
-  const newNoteContentRef= useRef(null);
-
-  //define the addNote method
-  let addNote=(event)=>{
+  // create a reference for the first input text box
+  const newNoteContentRef = useRef(null);
+ // define the addNote method
+  let addNote = (event) => {
     event.preventDefault();
-
-    //create a new object and add the new object to the notes state
-    let noteObject={
-      id:notes.length +1,
+     // create a new object
+    let noteObject = {
+      id: notes.length + 1,
       content: newNoteContent,
-      important: newNoteImportant,
+      important: newNoteImportant==='true',
     }
+    // add the new object to the notes state
+    // setNotes(notes.concat(noteObject));
 
-    //add the new object to the notes state
-    setNotes(notes.concat(noteObject));
-   
-    //clear the input text box
+    //send the record to the json server 
+    axios
+    .post('http://localhost:3001/notes', noteObject)
+    .then(response=> console.log(response));
+    // console.log(noteObject);
+
+    // clear the input text box
     setNewNoteContent('');
     setNewNoteImportant('');
     newNoteContentRef.current.focus();
   }
 
-  //handlenotchange func
-  let handleNoteChange=(event)=>{
+  let handleNoteChange = (event) => {
     setNewNoteContent(event.target.value);
-    // console.log('event.target.value');
   }
-  return ( 
-    <div>
-      <h1>Notes</h1>
-      <ul>
-        {notes.map(note=>
-          <Note key={note.id} note={note}/>)}  
-      </ul>
-      {/* add a simple form for adding notes  */}
-      <form onSubmit={addNote}>
-        <input value={newNoteContent} onChange={handleNoteChange}
-        placeholder='type a note ...'
-        rel={newNoteContentRef}/>
-        
-        <br/>
-        
-        <input type='text' placeholder='enter true or false'
-        value={newNoteImportant} onChange={()=>
-        setNewNoteImportant(e=>e.target.value)}/>
-        <br/>
-        
-        <button type='submit'>Add note</button>
-      </form>
+
+  let handleSelectChange = (event) => {
+    setNewNoteImportant(event.target.value);
+  }
+
+  let handleStatusChange = (event) => {
+    setShowStatus(event.target.value);
+    // console.log(event.target.value);
+  }
+  
+  return (
+   <Router>
+     <div>
+     <ReadNotes showStatus={showStatus}
+     handleStatusChange={handleStatusChange}
+     notes={notes} 
+     />
+      <CreateNote addNote={addNote} newNoteContent=
+      {newNoteContent} handleNoteChange={handleNoteChange}
+      newNoteContentRef={newNoteContentRef}
+      handleSelectChange={handleSelectChange}
+      newNoteImportant={newNoteImportant}/>
     </div>
+   </Router>
+
   )
 }
 
