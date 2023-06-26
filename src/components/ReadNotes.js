@@ -26,17 +26,17 @@ function ReadNotes({notes, showStatus, handleStatusChange}) {
             <input type='radio' name='filter' value="all" checked={ showStatus === 'all' } onChange={handleStatusChange} />
             Show All Notes
         </label>
-
+        <br/>
         <label>
             <input type='radio' name='filter' value="imp" checked={ showStatus === 'imp' } onChange={handleStatusChange} />
             Show Important Notes
         </label>
-
+        <br/>
         <label>
             <input type='radio' name='filter' value="nonimp" checked={ showStatus === 'nonimp' } onChange={handleStatusChange} />
             Show Non-Important Notes
         </label>
-
+        <br/>
         <ul>
             {notesFiltered.map(note => 
             <Note key={note.id} note={note} />
